@@ -9,7 +9,7 @@ class AnimeFigureSaleBot {
     def main() {
         println "Hello, world!"
 
-        def name = 't3_5hqsle'
+        def name = '5hqsle'
 
         // Get JSON
         def json = new RedditClient().retrieveJson(name)
