@@ -7,6 +7,8 @@ import groovyx.net.http.HTTPBuilder
 /**
  * User: dglidden
  * Date: 12/12/16
+ *
+ * Perhaps a bit silly to have this in its own class, but there you have it...
  */
 class RedditClient {
 
