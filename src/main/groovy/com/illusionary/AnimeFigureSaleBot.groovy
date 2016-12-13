@@ -7,12 +7,13 @@ package com.illusionary
 class AnimeFigureSaleBot {
 
     def main() {
-        println "Hello, world!"
+        println 'Processing...'
 
-        def name = '5hqsle'
+        def fullname = 't3_5i0zso'
+        // def fullname = ''
 
         // Get JSON
-        def json = new RedditClient().retrieveJson(name)
+        def json = new RedditClient().retrieveJson(fullname)
         // println json
 
         json.data.children.each { it ->
@@ -21,16 +22,17 @@ class AnimeFigureSaleBot {
             // Scan through JSON for [SALE] entries
             def title = it['data']['title']
             def author = it['data']['author']
-            def id = it['data']['id']
+            def name = it['data']['name']
+            def url = "https://www.reddit.com${it['data']['permalink']}"
             def created = new Date(it['data']['created'].longValue() * 1000)
             def isSale = (title ==~ /(?i).*sale.*/)
 
-            println "Author: ${author}, Title: ${title}, Created: ${created}, ID: ${id}\n"
+            println "Author: ${author}, Title: ${title}, Created: ${created}, Name: ${name}, URL: ${url}\n"
 
             if(isSale) {
                 println "${author} might be selling something!\n"
                 // Send email if you find one
-                new EmailClient().sendEmail('dglidden@gmail.com', author, title, created)
+                new EmailClient().sendEmail('dglidden@gmail.com', author, title, created, url)
             }
         }
 

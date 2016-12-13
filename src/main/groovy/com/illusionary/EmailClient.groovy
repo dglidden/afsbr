@@ -6,8 +6,8 @@ package com.illusionary
  */
 class EmailClient {
 
-    def sendEmail(def to, def author, def title, def timestamp) {
-
+    def sendEmail(def to, def author, def title, def created, def url) {
+        println "Hey, I'm sending an email to ${to} about ${author}'s possible sale here: ${url}\n"
 
     }
 }

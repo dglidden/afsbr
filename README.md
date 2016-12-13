@@ -12,7 +12,7 @@ Still TODO:
 Ideas for future possible enhancement:
 
 * Better configuration (i.e. config file instead of hard-coded)
-  (This is like totally necessary if oath/login is ever needed,
+  (This is like totally necessary if oauth/login is ever needed,
    like for below features...)
 * Scan multiple subreddits
 * Allow other users to "subscribe" to subreddit scans
